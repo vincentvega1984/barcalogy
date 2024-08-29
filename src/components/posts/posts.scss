@@ -1,0 +1,10 @@
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    &__load-more {
+        margin: 40px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,113 @@
+@mixin btn {
+    color: $color-4;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    min-width: 150px;
+    text-align: center;
+    padding: 0 16px;
+    line-height: 32px;
+    transition: all .3s ease;
+    position: relative;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@mixin btn-primary {
+    @include btn;
+    background-color: $color-2;
+
+    &:hover {
+        background-color: $color-3;
+    }
+}
+
+@mixin btn-circle-chevron (
+    $direction, 
+    $fill: false,
+    $size: 36px, 
+    $color: $color-4, 
+    $h-color: $color-2, 
+    $arrow-size: 10px, 
+    $b-width: 2px
+) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    font-size: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    @if $fill == true {
+        background-color: $color;
+        border: none;
+    } @else {
+        background: transparent;
+        border: $b-width solid $color;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: $arrow-size;
+        height: $arrow-size;
+        transform: rotate(45deg);
+        position: relative;
+        transition: all .3s ease;
+        
+
+        @if $fill == true {
+            border: 0 solid $h-color;
+        } @else {
+            border: 0 solid $color;
+        }
+
+        @if $direction == right {
+            border-top-width: $b-width;
+            border-right-width: $b-width;
+            #{$direction}: $b-width;
+        }
+
+        @if $direction == left {
+            border-bottom-width: $b-width;
+            border-left-width: $b-width;
+            #{$direction}: $b-width;
+        }
+
+        @if $direction == top {
+            border-top-width: $b-width;
+            border-left-width: $b-width;
+            #{$direction}: $b-width;
+        }
+
+        @if $direction == bottom {
+            border-bottom-width: $b-width;
+            border-right-width: $b-width;
+            #{$direction}: $b-width;
+        }
+    }
+
+    &:hover {
+        @if $fill == true {
+            background-color: $h-color;
+
+            &:after {
+                border-color: $color; 
+            }
+        } @else {
+            border-color: $h-color;
+
+            &:after {
+                border-color: $h-color; 
+            }
+        }
+    }
+}
+
+.btn-primary {
+    @include btn-primary;
+}

@@ -1,0 +1,6 @@
+.scroll-top {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    @include btn-circle-chevron(top, true, 48px)
+}

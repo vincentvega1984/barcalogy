@@ -1,0 +1,64 @@
+.player {
+    color: $color-4;
+    flex: 0 0 400px;
+    padding: 0 40px;
+
+    &__wrapper {
+        border-bottom: 4px solid $color-2;
+        position: relative;
+        height: 400px;
+        border-radius: 20px 20px 0 0;
+        background: linear-gradient(
+            to right,
+            $color-3,
+            $color-3 10%,
+            lighten($color-3, 10%) 10%,
+            lighten($color-3, 10%) 20%,
+            $color-3 20%,
+            $color-3 30%,
+            lighten($color-3, 10%) 30%,
+            lighten($color-3, 10%) 40%,
+            $color-3 40%,
+            $color-3 50%,
+            $color-2 50%,
+            $color-2 100%
+        );
+        transition: all .3s ease;
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+
+    &__lastname {
+        color: $color-2;
+        margin: 5px 0 0;
+    }
+
+    &__number {
+        font-size: 250px;
+        font-weight: 900;
+        line-height: 1;
+        color: darken($color-3, 10%)
+    }
+
+    &__image {
+        max-width: 90%;
+        display: block;
+        position: absolute;
+        right: 5%;
+        bottom: 0;
+    }
+
+    &:not(.active) {
+         
+        .player__wrapper {
+            transform: scale(0.9);
+            opacity: .4;
+        }
+    }
+}

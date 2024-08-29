@@ -1,0 +1,23 @@
+.header-navigation {
+    display: flex;
+    align-items: center;
+    
+    li {
+        margin-left: 24px;
+    }
+
+    a {
+        font-size: 14px;
+        line-height: 18px;
+        text-decoration: none;
+        color: $color-4;
+        display: inline-block;
+        padding: 8px 30px;
+        border-radius: 3px;
+
+
+        &.active {
+            background-color: $color-2;
+        }
+    }
+}

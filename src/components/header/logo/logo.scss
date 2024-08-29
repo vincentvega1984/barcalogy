@@ -1,0 +1,10 @@
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color-4;
+
+    svg {
+        margin-right: 20px;
+    }
+}
